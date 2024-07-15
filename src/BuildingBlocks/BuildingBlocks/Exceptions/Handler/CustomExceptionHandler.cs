@@ -57,11 +57,9 @@ public class CustomExceptionHandler(ILogger<CustomExceptionHandler> logger) : IE
         problemDetails.Extensions.Add("traceId", context.TraceIdentifier);
 
         if (exception is ValidationException validationException)
-        {
             problemDetails.Extensions.Add("ValidationErrors", validationException.Errors);
-        }
 
-        await context.Response.WriteAsJsonAsync(problemDetails, cancellationToken: cancellationToken);
+        await context.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
         return true;
     }
 }
