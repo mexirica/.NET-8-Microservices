@@ -48,10 +48,6 @@ There is a couple of microservices which implemented **e-commerce** modules over
 * Yarp Reverse Proxy Configuration; Route, Cluster, Path, Transform, Destinations
 * **Rate Limiting** with FixedWindowLimiter on Yarp Reverse Proxy Configuration
 
-#### WebUI ShoppingApp Microservice
-* ASP.NET Core Web Application with Bootstrap 4 and Razor template
-* Call **Yarp APIs with Refit HttpClientFactory**
-
 #### Docker Compose establishment with all microservices on docker;
 * Containerization of microservices
 * Containerization of databases
@@ -68,9 +64,7 @@ Follow these steps to get your development environment set up: (Before Run Start
 1. Clone the repository
 2. At the root directory of solution, run below command:
 ```csharp
-docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+docker-compose up -d
 ```
 
 3. Wait for docker compose all microservices. That’s it! (some microservices need extra time to work so please wait if not worked in first shut)
-
-4. Launch **Shopping Web UI -> https://localhost:6065** in your browser to view index page. You can use Web project in order to **call microservices over Yarp API Gateway**. When you **checkout the basket** you can follow **queue record on RabbitMQ dashboard**.
