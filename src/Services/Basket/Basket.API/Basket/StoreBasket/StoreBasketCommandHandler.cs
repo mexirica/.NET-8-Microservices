@@ -35,10 +35,6 @@ public class StoreBasketCommandHandler(
         {
             var coupon =
                 await discountProto.GetDiscountAsync(new GetDiscountRequest { ProductName = item.ProductName });
-
-            if (coupon is null)
-                continue;
-
             item.Price -= coupon.Amount;
         }
     }

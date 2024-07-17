@@ -37,9 +37,13 @@
     build:
       context: .
       dockerfile: Services/Basket/Basket.API/Dockerfile
+    environment:
+      - GrpcSettings__DiscountUrl=http://discount.grpc:8080
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ConnectionStrings__Database=Server=basketdb;Port=5432;Database=BasketDb;User Id=postgres;Password=postgres;Include Error Detail=true
+      - ConnectionStrings__Redis=distributedcache:6379
     ports:
       - "6001:8080"
-      - "6051:8081"
   
   discount.grpc:
     image: discount.grpc
@@ -47,10 +51,10 @@
       context: .
       dockerfile: Services/Discount/Discount.Grpc/Dockerfile
     environment:
+      - ASPNETCORE_HTTP_PORTS=8080
       - ConnectionStrings__Database=Data Source=discountdb
     ports:
       - "6002:8080"
-      - "6052:8081"
   
   catalogapi:
     image: catalogapi
@@ -59,7 +63,12 @@
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
     ports:
       - "6000:8080"
-      - "6050:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ConnectionStrings__Database=Server=catalogdb;Port=5432;Database=CatalogDb;User Id=postgres;Password=postgres;Include Error Detail=true
+    depends_on:
+      - catalogdb
 volumes:
   postgres_catalog:
   postgres_basket:
