@@ -19,6 +19,16 @@
     ports:
       - "6379:6379"
   
+  orderdb:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=SwN12345678
+    container_name: mssql
+    restart: always
+    ports:
+      - "1433:1433"
+  
   basketdb:
     image: postgres
     container_name: basketdb
