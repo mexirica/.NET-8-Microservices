@@ -1,5 +1,6 @@
 using BuildingBlocks.Behaviors;
 using BuildingBlocks.Exceptions.Handler;
+using BuildingBlocks.Messaging.MassTransit;
 using Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -43,6 +44,12 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
 {
     options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
 });
+
+#endregion
+
+#region Async Communication Services
+
+builder.Services.AddMessageBroker(builder.Configuration);
 
 #endregion
 

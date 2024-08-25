@@ -33,6 +33,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Application", "Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Infrastructure", "Services\Ordering\Ordering.Infrastructure\Ordering.Infrastructure.csproj", "{FE23E0B2-E03D-42ED-A70C-E3D8F7CEF309}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Messaging", "BuildingBlocks\BuildingBlocks.Messaging\BuildingBlocks.Messaging.csproj", "{CFD77355-D9D5-4938-9239-9C88D774362B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{82EE72C6-F3F0-4D54-A808-BB6EC0C99C22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpApiGateway", "ApiGateway\YarpApiGateway\YarpApiGateway.csproj", "{CA95F3F5-4B41-41AC-8D43-618434C53370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +57,8 @@ Global
 		{D5253621-2C9D-49A3-8E9D-8CA104EFEEE1} = {BF606B0C-F045-44A0-B276-E308F3F6CD3E}
 		{324FD12B-ACD5-4BAC-8FD6-B0A7A8574B2E} = {BF606B0C-F045-44A0-B276-E308F3F6CD3E}
 		{FE23E0B2-E03D-42ED-A70C-E3D8F7CEF309} = {BF606B0C-F045-44A0-B276-E308F3F6CD3E}
+		{CFD77355-D9D5-4938-9239-9C88D774362B} = {3E09493C-F5A3-4F5B-A8CB-5C12F77E58E0}
+		{CA95F3F5-4B41-41AC-8D43-618434C53370} = {82EE72C6-F3F0-4D54-A808-BB6EC0C99C22}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B8042268-79B4-4CD3-8A87-F0F51ABD9FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -85,5 +93,13 @@ Global
 		{FE23E0B2-E03D-42ED-A70C-E3D8F7CEF309}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE23E0B2-E03D-42ED-A70C-E3D8F7CEF309}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE23E0B2-E03D-42ED-A70C-E3D8F7CEF309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD77355-D9D5-4938-9239-9C88D774362B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD77355-D9D5-4938-9239-9C88D774362B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD77355-D9D5-4938-9239-9C88D774362B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD77355-D9D5-4938-9239-9C88D774362B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA95F3F5-4B41-41AC-8D43-618434C53370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA95F3F5-4B41-41AC-8D43-618434C53370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA95F3F5-4B41-41AC-8D43-618434C53370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA95F3F5-4B41-41AC-8D43-618434C53370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
